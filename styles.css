@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #121213;
+    color: #ffffff;
+}
+
+.game-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-gap: 5px;
+    margin-bottom: 20px;
+}
+
+.board .tile {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #3a3a3c;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.board .tile.correct {
+    background-color: #6aaa64;
+    border-color: #6aaa64;
+    color: white;
+}
+
+.board .tile.present {
+    background-color: #c9b458;
+    border-color: #c9b458;
+    color: white;
+}
+
+.board .tile.absent {
+    background-color: #3a3a3c;
+    border-color: #3a3a3c;
+    color: white;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    width: 35%;
+}
+
+.keyboard .key {
+    width: 40px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #818384;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+}
+
+.keyboard .key.wide {
+    width: 80px;
+}
+
+.keyboard .key.correct {
+    background-color: #6aaa64;
+}
+
+.keyboard .key.present {
+    background-color: #c9b458;
+}
+
+.keyboard .key.absent {
+    background-color: #3a3a3c;
+}
+
+.celebration {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 2em;
+    animation: celebration-animation 2s ease-in-out;
+}
+
+@keyframes celebration-animation {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
